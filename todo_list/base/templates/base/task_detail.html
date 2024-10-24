@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Detail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgb(227,138,177);
+            background: linear-gradient(90deg, rgba(227,138,177,1) 0%, rgba(233,137,206,1) 10%, rgba(216,68,190,1) 26%, rgba(147,57,219,1) 50%, rgba(120,97,200,1) 72%, rgba(18,97,190,1) 100%);
+            margin: 0;
+        }
+
+        .task-container {
+            background: #111;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        p {
+            color: #bbb;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .status {
+            font-weight: bold;
+            color: #4CAF50; /* Green color for completed tasks */
+        }
+
+        .created {
+            font-style: italic;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="task-container">
+        <h1>{{ task.title }}</h1>
+        <p>{{ task.description }}</p>
+        <p class="status">Status: {% if task.complete %}Completed{% else %}Pending{% endif %}</p>
+        <p class="created">Created: {{ task.created }}</p>
+    </div>
+</body>
+</html>
